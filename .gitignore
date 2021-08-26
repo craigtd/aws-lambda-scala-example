@@ -1,2 +1,11 @@
 *.class
 *.log
+
+# SBT
+.bsp
+# IntelliJ IDEA
+.idea
+.iml
+
+target
+project/target
