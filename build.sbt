@@ -16,7 +16,7 @@ val awsLambdaEventsVersion = "3.9.0"
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
-      organization := "uk.gov.hmrc.nonrep",
+      organization := "com.automatrope",
       git.useGitDescribe := true,
       scalaVersion := "2.13.6"
     )),
@@ -25,7 +25,6 @@ lazy val root = (project in file(".")).
       // AWS
       "com.amazonaws" % "aws-java-sdk-core"      % awsSdkVersion,
       "com.amazonaws" % "aws-java-sdk-s3"        % awsSdkVersion,
-      "com.amazonaws" % "aws-java-sdk-glacier"   % awsSdkVersion,
       "com.amazonaws" % "aws-lambda-java-core"   % awsLambdaVersion,
       "com.amazonaws" % "aws-lambda-java-events" % awsLambdaEventsVersion,
       "com.amazonaws" % "aws-lambda-java-log4j2" % "1.2.0",

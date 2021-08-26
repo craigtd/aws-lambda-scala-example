@@ -12,7 +12,6 @@ class Handler {
   def handler(event: java.util.Map[String, String], context: Context) = {
     val logger: LambdaLogger = context.getLogger
     val response = "SUCCESS"
-    logger.log("ENVIRONMENT VARIABLES: " + gson.toJson(System.getenv))
     logger.log("CONTEXT: " + gson.toJson(context))
     // process event
     logger.log("EVENT: " + gson.toJson(event))
