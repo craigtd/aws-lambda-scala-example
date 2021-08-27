@@ -1,20 +1,21 @@
 package com.automatrope.lambda
 
-import com.amazonaws.services.lambda.runtime.{Context, LambdaLogger}
+import com.amazonaws.services.lambda.runtime.Context
+import org.slf4j.LoggerFactory
 
 class Handler {
 
-  import com.google.gson.Gson
-  import com.google.gson.GsonBuilder
+  import com.google.gson.{Gson, GsonBuilder}
 
   val gson: Gson = new GsonBuilder().setPrettyPrinting.create
 
   def handler(event: java.util.Map[String, String], context: Context) = {
-    val logger: LambdaLogger = context.getLogger
+    lazy val logger = LoggerFactory.getLogger(this.getClass)
+
     val response = "SUCCESS"
-    logger.log("CONTEXT: " + gson.toJson(context))
+    logger.info("CONTEXT: " + gson.toJson(context))
     // process event
-    logger.log("EVENT: " + gson.toJson(event))
+    logger.info("EVENT: " + gson.toJson(event))
     response
   }
 

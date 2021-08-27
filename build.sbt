@@ -27,10 +27,15 @@ lazy val root = (project in file(".")).
       "com.amazonaws" % "aws-java-sdk-s3"        % awsSdkVersion,
       "com.amazonaws" % "aws-lambda-java-core"   % awsLambdaVersion,
       "com.amazonaws" % "aws-lambda-java-events" % awsLambdaEventsVersion,
-      "com.amazonaws" % "aws-lambda-java-log4j2" % "1.2.0",
 
-      //Gson
-      "com.google.code.gson" % "gson" % "2.8.8"
+      // Gson
+      "com.google.code.gson" % "gson" % "2.8.8",
+
+      // Logging
+      "com.amazonaws" % "aws-lambda-java-log4j2" % "1.2.0",
+      "org.apache.logging.log4j" % "log4j-api" % "2.14.1",
+      "org.apache.logging.log4j" % "log4j-core" % "2.14.1",
+      "org.apache.logging.log4j" % "log4j-slf4j18-impl" % "2.13.0"
     ),
 
     assembly / assemblyJarName := s"$projectName.jar",
